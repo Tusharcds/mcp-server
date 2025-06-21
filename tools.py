@@ -1,11 +1,13 @@
-from langchain.tools import tool
+# tools.py
 
-@tool
-def web_search(query: str) -> str:
-    """Perform a web search and return summary."""
-    return f"Search results for '{query}' (simulated)."
-
-@tool
-def echo(text: str) -> str:
-    """Echo input back."""
-    return text
+def get_tools():
+    return [
+        {
+            "name": "create-short-video",
+            "description": "Create a short video from a list of scenes"
+        },
+        {
+            "name": "get-video-status",
+            "description": "Get the status of a video (ready, processing, failed)"
+        }
+    ]
