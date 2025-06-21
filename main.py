@@ -10,7 +10,7 @@ app = FastAPI()
 
 @app.get("/tools")
 async def tools_endpoint():
-    return {"tools": get_tools()}
+    return JSONResponse(content={"tools": get_tools()})
 
 
 @app.get("/mcp/sse")
